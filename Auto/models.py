@@ -75,8 +75,7 @@ class Vehicle(models.Model):
         blank=True,
         null=True,
         default=0,
-        verbose_name='Пробіг'
-    )
+        verbose_name='Пробіг')
 
     color = models.CharField(
         max_length=32,
@@ -123,7 +122,3 @@ class VehicleImage(models.Model):
     class Meta:
         verbose_name = 'Фото т/з'
         verbose_name_plural = 'Фото т/з'
-
-
-
-
