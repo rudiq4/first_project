@@ -100,7 +100,7 @@ ENV/
 # mypy
 .mypy_cache/
 .idea/
-db.sqlite3
+baza.sqlite3
 /mvenv/
 
 /static/
