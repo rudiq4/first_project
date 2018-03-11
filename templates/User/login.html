@@ -1,0 +1,14 @@
+{% extends 'base.html'%}
+
+{% load static %}
+
+{% block content %}
+
+    <title>Авторизація</title>
+    <form action="" method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Увійти</button>
+    </form>
+
+{% endblock %}
