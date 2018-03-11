@@ -1,0 +1,15 @@
+{% extends 'base.html'%}
+{% load static %}
+
+
+{% block content %}
+
+<h2>Добав новий т/з тут :</h2>
+
+    <form action="{%  url 'new_vehicle' %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button name="submit"> add vehicle</button>
+    </form>
+
+{% endblock content %}

@@ -1,10 +1,18 @@
-<div class="col-lg-4">
-    <div class="product-item">
-        <div>
-            <a href="{% url 'vehicle' item.vehicle.id %}"><!-- Клікабелька картінка-->
-                <img src="{{ item.img.url }}" class="img-responsive">
-            </a>
+<div class="col-lg-6">
+        <div class="veh-item">
+            <div class="kartinka">
+                <a href="{% url 'vehicle' item.vehicle.id %}"><!-- Клікабелька картінка-->
+                    <img src="{{ item.img.url }}" class="img-responsive">
+                </a>
+            </div>
+            <h2>{{ item.vehicle.marka }} {{ item.vehicle.model }}  {{ item.vehicle.year }}</h2>
+            <div class="feature">
+                <ul type="disc">
+                    <li>Тип пального : {{ item.vehicle.fuel }}</li>
+                    <li>Об'єм двигуна : {{ item.vehicle.capactity }}</li>
+                    <li>Пробіг : {{ item.vehicle.mileage }}</li>
+                    <li>Місцерозташування : {{ item.vehicle.location }}</li>
+                </ul>
+            </div>
         </div>
-        <h2>{{ item.name }}</h2>
-    </div>
 </div>
