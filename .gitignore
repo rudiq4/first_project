@@ -103,6 +103,4 @@ ENV/
 baza.sqlite3
 /mvenv/
 
-/static/
-/dist/
-/media/
+
