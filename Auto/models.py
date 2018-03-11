@@ -90,6 +90,15 @@ class Vehicle(models.Model):
         blank=False,
         verbose_name='Тип пального')
 
+    capacity = models.DecimalField(
+        max_digits=2,
+        decimal_places=1,
+        blank=True,
+        null=True,
+        default=None,
+        verbose_name="Об'єм двигуна"
+    )
+
     description = models.TextField(
         blank=True,
         null=True,
@@ -115,6 +124,7 @@ class Vehicle(models.Model):
 class VehicleImage(models.Model):
     img = models.ImageField(upload_to='vehicle_image/')
     vehicle = models.ForeignKey(Vehicle, blank=True, null=True, default=None)
+    flag = models.BooleanField(default=True)
 
     def __str__(self):
         return "%s" % self.id
