@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .models import *
 from django.shortcuts import render
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.core.urlresolvers import reverse
 from .forms import VehicleForm
 from django.shortcuts import render_to_response
@@ -28,6 +28,23 @@ def new_vehicle(request):
             form.save()  # Зберігаємо форму в БД
             return HttpResponseRedirect(reverse('main'))  # Перенаправляємо Юзера на вказаний урл
     return render(request, 'new_vehicle.html', locals())
+
+
+def SearchForm(request):
+    return render_to_response('searchform.html')
+
+
+def search(request):
+    error = False
+    if 'marka' in request.GET:
+        marka = request.GET['marka']
+        if not marka:
+            error=True
+        else:
+            vehicles = Vehicle.objects.filter(marka__icontains=marka)
+            return render_to_response('search_results.html',
+                                  {'vehicles': vehicles, 'query': marka})
+    return render_to_response('searchform.html', {'error':error})
 
 
 

@@ -1,35 +1,36 @@
-<form class="form-horizontal">
+{% if error %}
+    <p style="color: red;">Please submit a search term.</p>
+{% endif %}
+
+<form  action="" method="get" class="form-horizontal">
 <fieldset>
 
 <!-- Form Name -->
-<legend>Пошук Автомобіля</legend>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="model">Модель</label>
-  <div class="col-md-4">
-  <input name="model" class="form-control input-md" id="model" required="" type="text" placeholder="">
-  <span class="help-block">Модель автомобіля</span>
-  </div>
-</div>
+<legend>Пошук автомобіля</legend>
 
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="marka">Марка</label>
   <div class="col-md-4">
-  <input name="marka" class="form-control input-md" id="marka" required="" type="text" placeholder="">
-  <span class="help-block">Марка автомобіля</span>
+  <input name="marka" class="form-control input-md" id="marka" required="" type="text">
+
   </div>
 </div>
 
-<!-- Select Basic -->
+{#<!-- Text input-->#}
+{#<div class="form-group">#}
+{#  <label class="col-md-4 control-label" for="model">Модель</label>#}
+{#  <div class="col-md-4">#}
+{#  <input name="model" class="form-control input-md" id="model" required="" type="text">#}
+{##}
+{#  </div>#}
+{#</div>#}
+
+<!-- Button -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="oblast-choice">Select Basic</label>
+  <label class="col-md-4 control-label" for="search"></label>
   <div class="col-md-4">
-    <select name="oblast-choice" class="form-control" id="oblast-choice">
-      <option value="1">Львівська</option>
-      <option value="2">Волинська</option>
-    </select>
+    <input type="submit" value="Пошук">
   </div>
 </div>
 

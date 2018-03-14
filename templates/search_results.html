@@ -1,0 +1,12 @@
+<p>You searched for: <strong>{{ query }}</strong></p>
+
+{% if vehicles %}
+    <p>Found {{ vehicles }} vehicle{{ vehicles }}.</p>
+    <ul>
+        {% for vehicle in vehicles %}
+        <li>{{ vehicle.marka }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No vehicles matched your search criteria.</p>
+{% endif %}
