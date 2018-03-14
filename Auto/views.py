@@ -1,10 +1,12 @@
 from django.shortcuts import render
-from Auto.models import *
+from .models import *
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
-from Auto.models import Vehicle
 from .forms import VehicleForm
+from django.shortcuts import render_to_response
+from django.template import RequestContext
+
 
 def main(request):
     vehicle_images = VehicleImage.objects.filter(flag=True)
@@ -13,7 +15,7 @@ def main(request):
 
 def vehicle(request, vehicle_id):
     vehicle = Vehicle.objects.get(id=vehicle_id)
-    return render(request, 'vehpage.html', locals())
+    return render(request, 'shablon.html', locals())
 
 
 def new_vehicle(request):
@@ -26,3 +28,19 @@ def new_vehicle(request):
             form.save()  # Зберігаємо форму в БД
             return HttpResponseRedirect(reverse('main'))  # Перенаправляємо Юзера на вказаний урл
     return render(request, 'new_vehicle.html', locals())
+
+
+
+
+def e_handler404(request):
+    context = RequestContext(request)
+    response = render_to_response('Errors/error404.html', context)
+    response.status_code = 404
+    return response
+
+
+def e_handler500(request):
+    context = RequestContext(request)
+    response = render_to_response('Errors/error500.html', context)
+    response.status_code = 500
+    return response

@@ -1,18 +1,30 @@
-<div class="col-lg-6">
-        <div class="veh-item">
-            <div class="kartinka">
-                <a href="{% url 'vehicle' item.vehicle.id %}"><!-- Клікабелька картінка-->
-                    <img src="{{ item.img.url }}" class="img-responsive">
-                </a>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                {% for picture in vehicle.vehicleimage_set.all %}
+                    <img src="{{ capture.image.url }}" class="product-picture">
+                {% endfor %}
             </div>
-            <h2>{{ item.vehicle.marka }} {{ item.vehicle.model }}  {{ item.vehicle.year }}</h2>
-            <div class="feature">
-                <ul type="disc">
-                    <li>Тип пального : {{ item.vehicle.fuel }}</li>
-                    <li>Об'єм двигуна : {{ item.vehicle.capactity }}</li>
-                    <li>Пробіг : {{ item.vehicle.mileage }}</li>
-                    <li>Місцерозташування : {{ item.vehicle.location }}</li>
-                </ul>
-            </div>
+            <div class="col-lg-6">
+                <h1 class="product-name">
+                    {{ product.name }}
+                </h1>
+                <div class="product-author">
+                    Автор : {{ product.autrhor }}
+                </div>
+                <div class="product-price">
+                    <p>
+                        Ціна : {{ product.price }} гривень
+                    </p>
+                </div>
+                <div class="product-desc">
+                    {{ product.description }}
+                </div>
         </div>
-</div>
+    </div>
+    </div>
+{% endblock %}

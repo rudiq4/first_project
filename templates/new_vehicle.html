@@ -3,13 +3,19 @@
 
 
 {% block content %}
+<div class="general-container">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <form action="{%  url 'new_vehicle' %}" method="post">
+                    {% csrf_token %}
+                    {{ form.as_ul }}
 
-<h2>Добав новий т/з тут :</h2>
-
-    <form action="{%  url 'new_vehicle' %}" method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button name="submit"> add vehicle</button>
-    </form>
+                    <button name="submit"> Добавити </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
 {% endblock content %}

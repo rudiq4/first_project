@@ -25,3 +25,13 @@ html , body {
     text-align: center;
     border: 1px solid black;
 }
+
+.howdyho {
+    border: 1px solid red;
+    text-align: center;
+    padding: 25px;
+}
+
+.general-container {
+    border: 1px solid red;
+}
