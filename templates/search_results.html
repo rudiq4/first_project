@@ -1,12 +1,25 @@
-<p>You searched for: <strong>{{ query }}</strong></p>
+{% extends 'base.html'%}
 
-{% if vehicles %}
-    <p>Found {{ vehicles }} vehicle{{ vehicles }}.</p>
-    <ul>
-        {% for vehicle in vehicles %}
-        <li>{{ vehicle.marka }}</li>
-        {% endfor %}
-    </ul>
-{% else %}
-    <p>No vehicles matched your search criteria.</p>
-{% endif %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+            <p>Ви шукали <strong>{{ query }}</strong></p>
+                {% if vehicles %}
+                    <p>Знайдено {{ vehicles|length }} транспорний засіб{{ vehicles|pluralize }}.</p>
+                <ul>
+                    {% for vehicle in vehicles %}
+                        <li>{{ vehicle.marka }}</li>
+                    {% endfor %}
+                </ul>
+                    {% else %}
+                        <p>Незнайдено т/з котрий би відповідав вашим критеріям</p>
+                {% endif %}
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

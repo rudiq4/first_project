@@ -10,6 +10,6 @@ urlpatterns = [
     url(r'^$', views.main, name='main'),
     url(r'^vehicle/(?P<vehicle_id>\w+)/$', views.vehicle, name='vehicle'),
     url(r'^new_vehicle/$', views.new_vehicle, name='new_vehicle'),
-    url(r'^search-form/$', views.SearchForm, name='search_form'),
+    url(r'^search-form/$', views.search_form, name='search_form'),
     url(r'^search/$', views.search, name='search'),
 ]

@@ -6,23 +6,23 @@
         <div class="row">
             <div class="col-lg-6">
                 {% for picture in vehicle.vehicleimage_set.all %}
-                    <img src="{{ capture.image.url }}" class="product-picture">
+                    <img src="{{ picture.image.url }}" class="product-picture">
                 {% endfor %}
             </div>
             <div class="col-lg-6">
                 <h1 class="product-name">
-                    {{ product.name }}
+                    {{ vehicle.marka }}
                 </h1>
                 <div class="product-author">
-                    Автор : {{ product.autrhor }}
+                    Автор : {{ vehicle.model }}
                 </div>
                 <div class="product-price">
                     <p>
-                        Ціна : {{ product.price }} гривень
+                        Ціна : {{ vehicle.price }} гривень
                     </p>
                 </div>
                 <div class="product-desc">
-                    {{ product.description }}
+                    {{ vehicle.description }}
                 </div>
         </div>
     </div>

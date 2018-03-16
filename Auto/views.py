@@ -15,7 +15,7 @@ def main(request):
 
 def vehicle(request, vehicle_id):
     vehicle = Vehicle.objects.get(id=vehicle_id)
-    return render(request, 'shablon.html', locals())
+    return render(request, 'vehpage.html', locals())
 
 
 def new_vehicle(request):
@@ -30,7 +30,7 @@ def new_vehicle(request):
     return render(request, 'new_vehicle.html', locals())
 
 
-def SearchForm(request):
+def search_form(request):
     return render_to_response('searchform.html')
 
 
@@ -39,7 +39,7 @@ def search(request):
     if 'marka' in request.GET:
         marka = request.GET['marka']
         if not marka:
-            error=True
+            error = True
         else:
             vehicles = Vehicle.objects.filter(marka__icontains=marka)
             return render_to_response('search_results.html',
