@@ -2,27 +2,24 @@
 {% load static %}
 
 {% block content %}
-    <div class="container veh-top">
+    <div class="container">
         <div class="row">
             <div class="col-lg-6">
-                    <h1 class="veh-marka">
-                        {{ vehicle.marka }}
-                        {{ vehicle.model }}
-                    </h1>
-                <hr>
+                {% for picture in vehicle.vehicleimage_set.all %}
+                    <img src="{{ picture.img.url }}" class="product-picture">
+                {% endfor %}
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-6 right-container">
+                <h1 class="veh-marka">
+                    {{ vehicle.marka }}
+                    {{ vehicle.model }}
+                </h1>
+                <hr>
                 <div class="veh-price">
                     <p>
                         Ціна : {{ vehicle.price }} гривень
                     </p>
                 </div>
-            </div>
-        </div>
-    </div>
-    <div class="container veh-medium">
-        <div class="row">
-            <div class="col-lg-6">
                 <div class="veh-year">
                         Рік випуску : {{ vehicle.year }}
                 </div>
@@ -38,27 +35,10 @@
                 <div class="veh-locatuion">
                         Місцезнаходження т/з : {{ vehicle.location}}
                 </div>
-        </div>
-            <div class="col-lg-6">
-                <div class="slider-box">
-                    <div class="slider">
-                        {% for picture in vehicle.vehicleimage_set.all %}
-                            <img src="{{ picture.img.url }}" class="veh-picture">
-                        {% endfor %}
-                    </div>
-                        <div class="prev"></div>
-                        <div class="next"></div>
-                </div>
-            </div>
-    </div>
-    </div>
-    <div class="container veh-bottom">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
                 <div class="veh-description">
-                    Опис :  {{ vehicle.description}}
+                        Опис : <hr> {{ vehicle.description}}
                 </div>
-            </div>
         </div>
+    </div>
     </div>
 {% endblock %}

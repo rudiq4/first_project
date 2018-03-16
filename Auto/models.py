@@ -21,11 +21,11 @@ class VehicleType(models.Model):
 
 class Vehicle(models.Model):
     FUEL_CHOICES = (
-        ('P', 'petrol'),
-        ('D', 'diesel'),
-        ('L', 'lpg'),
-        ('H', 'hybrid'),
-        ('E', 'electro')
+        ('P', 'Бензин'),
+        ('D', 'Дизель'),
+        ('L', 'Газ/Бензин'),
+        ('H', 'Гібрид'),
+        ('E', 'Електромобіль')
     )
     LOCATION_CHOICES = (
         (0, "---"),
