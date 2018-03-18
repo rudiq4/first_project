@@ -12,4 +12,5 @@ urlpatterns = [
     url(r'^new_vehicle/$', views.new_vehicle, name='new_vehicle'),
     url(r'^search-form/$', views.search_form, name='search_form'),
     url(r'^search/$', views.search, name='search'),
+    url(r'^testpage/$', views.testpage, name='testpage'),
 ]

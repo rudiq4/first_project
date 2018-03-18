@@ -33,6 +33,9 @@ def new_vehicle(request):
 def search_form(request):
     return render_to_response('searchform.html')
 
+def testpage(request):
+    return render_to_response('testpage.html')
+
 
 def search(request):
     error = False

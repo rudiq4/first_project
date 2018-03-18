@@ -7,22 +7,31 @@ html , body {
     margin-top: 500px;
 }
 
-.veh-item{
-    position: relative;
-    padding: 25px;
-    border: 1px solid grey;
-    height: 600px;
-    background: lightgrey;
-    margin-bottom: 80px;
-    margin-top: 30px;
-    border-radius: 5px;
+.medium-top {
+    border: 1px solid green;
 }
 
-.img-responsive{
-    width: 500px;
-    height: 400px;
+.left-top {
+    border: 1px solid yellow;
+}
+
+.right-top {
+    border: 1px solid blue;
+}
+.veh-item{
+    padding: 24px;
+    border: 1px solid grey;
+    width: 100%;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.kartinka{
+    height: 100%;
     text-align: center;
-    border: 1px solid black;
+    border: 1px solid white;
 }
 
 .howdyho {
@@ -35,14 +44,10 @@ html , body {
     border: 1px solid red;
 }
 
-/*.product-picture {*/
-    /*width: 100%;*/
-    /*height: 100%;*/
-    /*margin-bottom: 35px;*/
-/*}*/
+
 
 .veh-price {
-    text-align: center;
+    text-align: right;
     font-size: x-large;
     color: red;
 }
@@ -60,7 +65,7 @@ html , body {
     margin-top: 35px;
     border: 1px solid grey;
     padding: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    box-shadow: 0 0 25px rgba(0,0,0,0.5);
 }
 
 .veh-medium {
@@ -97,4 +102,17 @@ html , body {
 .slider-box .next{
   right:10px;
   background:url('../media/slider/right.png') no-repeat -10px 0;
+}
+
+.vehicle-search {
+    border: 1px solid red;
+}
+
+.test {
+    border: 5px solid red;
+    width: 100%;
+}
+
+.testpicture {
+    width: 100%;
 }

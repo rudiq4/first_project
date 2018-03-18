@@ -23,21 +23,38 @@
     <div class="container veh-medium">
         <div class="row">
             <div class="col-lg-6">
-                <div class="veh-year">
-                        Рік випуску : {{ vehicle.year }}
-                </div>
-                <div class="veh-mileage">
-                        Пробіг : {{ vehicle.mileage }}
-                </div>
-                <div class="veh-fuel">
-                        Вид двигуна : {{ vehicle.fuel }}
-                </div>
-                <div class="veh-capacity">
-                        Об'єм двигуна : {{ vehicle.capacity }}
-                </div>
-                <div class="veh-locatuion">
-                        Місцезнаходження т/з : {{ vehicle.location}}
-                </div>
+                <ul>
+                    <li>
+                        <div class="veh-year glyphicon glyphicon-info-sign">
+                            Рік випуску : {{ vehicle.year }}
+                        </div>
+                    </li>
+                    <li>
+                        <div class="veh-mileage glyphicon glyphicon-road">
+                            Пробіг : {{ vehicle.mileage }}
+                        </div>
+                    </li>
+                    <li>
+                        <div class="veh-fuel glyphicon glyphicon-flash">
+                            Вид двигуна : {{ vehicle.fuel }}
+                        </div>
+                    </li>
+                    <li>
+                        <div class="veh-capacity glyphicon glyphicon-wrench">
+                            Об'єм двигуна : {{ vehicle.capacity }}
+                        </div>
+                    </li>
+                    <li>
+                        <div class="veh-locatuion glyphicon glyphicon-move">
+                            Місцезнаходження т/з : {{ vehicle.location}}
+                        </div>
+                    </li>
+                </ul>
+
+
+
+
+
         </div>
             <div class="col-lg-6">
                 <div class="slider-box">

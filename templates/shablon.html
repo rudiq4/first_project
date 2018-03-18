@@ -1,18 +1,33 @@
-<div class="col-lg-6">
-        <div class="veh-item">
-            <div class="kartinka">
-                <a href="{% url 'vehicle' item.vehicle.id %}">
-                    <img src="{{ item.img.url }}" class="img-responsive">
-                </a>
+<div class="container-fluid">
+<div class="row veh-item">
+    <div class="col-lg-4">
+        <div class="kartinka">
+            <a href="{% url 'vehicle' item.vehicle.id %}">
+                <img src="{{ item.img.url }}" class="img-responsive">
+            </a>
+        </div>
+    </div>
+    <div class="col-lg-8">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="veh-main">
+                    <h2>{{ item.vehicle.marka }} {{ item.vehicle.model }}  {{ item.vehicle.year }}
+                        <span class="veh-price glyphicon glyphicon-usd">{{ item.vehicle.price }}</span></h2>
+                </div>
             </div>
-            <h2>{{ item.vehicle.marka }} {{ item.vehicle.model }}  {{ item.vehicle.year }}</h2>
-            <div class="feature">
-                <ul type="disc">
-                    <li>Тип пального : {{ item.vehicle.fuel }}</li>
-                    <li>Об'єм двигуна : {{ item.vehicle.capactity }}</li>
-                    <li>Пробіг : {{ item.vehicle.mileage }}</li>
-                    <li>Місцерозташування : {{ item.vehicle.location }}</li>
+            <div class="col-lg-6">
+                <ul type="desc-first">
+                    <li class="glyphicon glyphicon-flash"> Тип пального : {{ item.vehicle.fuel }}</li>
+                    <li class="glyphicon glyphicon-wrench"> Об'єм двигуна : {{ item.vehicle.capactity }}</li>
+                </ul>
+            </div>
+            <div class="col-lg-6">
+                <ul type="desc-second">
+                    <li class="glyphicon glyphicon-move"> Локація : {{ item.vehicle.location }}</li>
+                    <li class="glyphicon glyphicon-road"> Пробіг : {{ item.vehicle.mileage }}</li>
                 </ul>
             </div>
         </div>
+    </div>
 </div>
+    </div>
