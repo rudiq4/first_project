@@ -14,6 +14,7 @@ def main(request):
 
 
 def vehicle(request, vehicle_id):
+    adrenalin = 'VLASNIK != TRENER'  # Правєрачка передачі змінної на темплейт
     vehicle = Vehicle.objects.get(id=vehicle_id)
     return render(request, 'vehpage.html', locals())
 

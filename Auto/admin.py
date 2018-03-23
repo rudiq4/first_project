@@ -19,6 +19,7 @@ class VehicleImageInline(admin.TabularInline):
 
 class VehicleAdmin(admin.ModelAdmin):
     list_display = [field.name for field in Vehicle._meta.fields]
+    list_display_links = ('marka',)  # Клік по полю для редагування
     inlines = [VehicleImageInline]
 
     class Meta:

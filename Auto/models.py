@@ -1,5 +1,6 @@
 from django.db import models
 from . import const  # для областей
+from core.models.abstract_models import BaseDjangoModel
 
 
 class VehicleType(models.Model):
@@ -19,7 +20,7 @@ class VehicleType(models.Model):
         verbose_name_plural = 'Типи т/з'
 
 
-class Vehicle(models.Model):
+class Vehicle(BaseDjangoModel):
     FUEL_CHOICES = (
         ('P', 'Бензин'),
         ('D', 'Дизель'),
@@ -30,14 +31,14 @@ class Vehicle(models.Model):
     LOCATION_CHOICES = (
         (0, "---"),
         (1, const.OD),
-        (1, const.DN), (1, const.CN), (1, const.HK),
-        (1, const.ZT), (1, const.PT), (1, const.HS),
-        (1, const.KI), (1, const.ZP), (1, const.LG),
-        (1, const.DT), (1, const.VN), (1, const.CR),
-        (1, const.MI), (1, const.KR), (1, const.SU),
-        (1, const.LV), (1, const.CS), (1, const.HM),
-        (1, const.VL), (1, const.RV), (1, const.IF),
-        (1, const.TE), (1, const.ZK), (1, const.CZ),
+        (2, const.DN), (3, const.CN), (4, const.HK),
+        (5, const.ZT), (6, const.PT), (7, const.HS),
+        (8, const.KI), (9, const.ZP), (10, const.LG),
+        (11, const.DT), (12, const.VN), (13, const.CR),
+        (14, const.MI), (15, const.KR), (16, const.SU),
+        (17, const.LV), (18, const.CS), (19, const.HM),
+        (20, const.VL), (21, const.RV), (22, const.IF),
+        (23, const.TE), (24, const.ZK), (25, const.CZ),
     )
 
     marka = models.CharField(
@@ -108,6 +109,7 @@ class Vehicle(models.Model):
     location = models.PositiveIntegerField(
         default=0,
         blank=False,
+        max_length=2,
         choices=LOCATION_CHOICES,
         verbose_name='Розташування')
 

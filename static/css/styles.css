@@ -44,8 +44,6 @@ html , body {
     border: 1px solid red;
 }
 
-
-
 .veh-price {
     text-align: right;
     font-size: x-large;
@@ -56,10 +54,7 @@ html , body {
     font-size: large;
 }
 
-.veh-picture {
-    width: 530px;
-    height: 350px;
-}
+
 
 .veh-bottom {
     margin-top: 35px;
@@ -75,8 +70,9 @@ html , body {
 .slider-box{
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
   position:relative;
-  width:530px;
-  height:350px;
+  /*width:530px;*/
+  /*height:350px;*/
+    width: 100%;
   overflow:hidden;
 }
 .slider{
@@ -95,6 +91,12 @@ html , body {
   height:35px;
   cursor:pointer;
 }
+
+.veh-picture {
+    height:350px;
+    width: 555px;
+}
+
 .slider-box .prev{
   left:10px;
   background:url('../media/slider/left.png') no-repeat 0 0;
