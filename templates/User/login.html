@@ -4,11 +4,11 @@
 
 {% block content %}
 
-    <title>Авторизація</title>
-    <form action="" method="post">
-      {% csrf_token %}
-      {{ form.as_p }}
-      <button type="submit">Увійти</button>
+    <h1>Login</h1>
+    <form class="form-group" action="/user/login/" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Login">
     </form>
 
 {% endblock %}

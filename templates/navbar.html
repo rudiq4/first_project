@@ -21,7 +21,7 @@
 
                 {% if request.user.is_authenticated %}
                     <li>
-                        <a class="exit-button" href="http://127.0.0.1:8000/logout/">Вихід</a>
+                        <a class="exit-button" href="http://127.0.0.1:8000/user/logout/">Вихід</a>
                     </li>
                     <li>
                         <button type="button" class="btn btn-secondary btn-lg"
@@ -29,10 +29,10 @@
                     </li>
                 {% else %}
                     <li>
-                        <a href="http://127.0.0.1:8000/register/">Реєстрація</a>
+                        <a href="http://127.0.0.1:8000/user/signup">Реєстрація</a>
                     </li>
                     <li>
-                        <a href="http://127.0.0.1:8000/login"> Вхід </a>
+                        <a href="http://127.0.0.1:8000/user/login"> Вхід </a>
                     </li>
 
                 {% endif %}

@@ -1,52 +1,38 @@
-from django.views.generic.edit import FormView
-from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.forms import AuthenticationForm
-from django.contrib.auth import login
+from django.shortcuts import render ,redirect
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth import login,logout
 from django.http import HttpResponseRedirect
 from django.views.generic.base import View
-from django.contrib.auth import logout
 
 
-class RegisterFormView(FormView):
-    form_class = UserCreationForm
-
-    # Ссылка, на которую будет перенаправляться пользователь в случае успешной регистрации.
-    # В данном случае указана ссылка на страницу входа для зарегистрированных пользователей.
-    success_url = "/login/"
-
-    # Шаблон, который будет использоваться при отображении представления.
-    template_name = "User/register.html"
-
-    def form_valid(self, form):
-        # Создаём пользователя, если данные в форму были введены корректно.
-        form.save()
-
-        # Вызываем метод базового класса
-        return super(RegisterFormView, self).form_valid(form)
+def signup_view(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect('/')
+    else:
+        form = UserCreationForm()
+    return render(request, 'user/signup.html', {'form': form})
 
 
-class LoginFormView(FormView):
-    form_class = AuthenticationForm
-
-    # Аналогично регистрации, только используем шаблон аутентификации.
-    template_name = "User/login.html"
-
-    # В случае успеха перенаправим на главную.
-    success_url = "/"
-
-    def form_valid(self, form):
-        # Получаем объект пользователя на основе введённых в форму данных.
-        self.user = form.get_user()
-
-        # Выполняем аутентификацию пользователя.
-        login(self.request, self.user)
-        return super(LoginFormView, self).form_valid(form)
+def login_view(request):
+    if request.method == 'POST':
+        form = AuthenticationForm(data=request.POST)
+        if form.is_valid():
+            user = form.get_user()
+            login(request, user)
+            return redirect('/')
+    else:
+        form = AuthenticationForm()
+    return render(request, 'user/login.html', {'form': form})
 
 
-class LogoutView(View):
-    def get(self, request):
-        # Выполняем выход для пользователя, запросившего данное представление.
-        logout(request)
+# class logout_view(View):
+#     if request.method == 'POST':
+#         logout(request)
+#         return HttpResponseRedirect('/')
 
-        # После чего, перенаправляем пользователя на главную страницу.
-        return HttpResponseRedirect("/")
+
+

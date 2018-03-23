@@ -5,6 +5,7 @@ from Auto.views import e_handler404, e_handler500
 handler404 = e_handler404
 handler500 = e_handler500
 
+# app_name = 'Auto'
 
 urlpatterns = [
     url(r'^$', views.main, name='main'),
