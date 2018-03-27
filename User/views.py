@@ -1,6 +1,6 @@
-from django.shortcuts import render ,redirect
+from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
-from django.contrib.auth import login,logout
+from django.contrib.auth import login, logout
 from django.http import HttpResponseRedirect
 from django.views.generic.base import View
 
@@ -29,10 +29,10 @@ def login_view(request):
     return render(request, 'user/login.html', {'form': form})
 
 
-# class logout_view(View):
-#     if request.method == 'POST':
-#         logout(request)
-#         return HttpResponseRedirect('/')
+def logout_view(request):
+    # if request.method == 'POST':
+        logout(request)
+        return HttpResponseRedirect("/")
 
 
 

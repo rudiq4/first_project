@@ -1,8 +1,8 @@
-# from django.db import models
-# from django.contrib.auth.models import User
-# from core.models.abstract_models import BaseDjangoModel
-#
-#
+from django.db import models
+from django.contrib.auth.models import User
+from core.models.abstract_models import BaseDjangoModel
+
+
 # class City(models.Model):
 #     city = models.CharField(
 #         max_length=32,
@@ -42,6 +42,8 @@
 #
 #     def __str__(self):
 #         return "%s" % self.user
+
+
 
 
 
